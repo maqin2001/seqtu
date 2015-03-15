@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="SeqTU : Automatically exported from code.google.com/p/seqtu">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>SeqTU</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/maqin2001/seqtu">View on GitHub</a>
+
+          <h1 id="project_title">SeqTU</h1>
+          <h2 id="project_tagline">Automatically exported from code.google.com/p/seqtu</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/maqin2001/seqtu/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/maqin2001/seqtu/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <hr>
+
+<h1>
+<a id="seqtu" class="anchor" href="#seqtu" aria-hidden="true"><span class="octicon octicon-link"></span></a>SeqTU</h1>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ol>
+<li>Download and install libSVM: The current release (Version 3.17, April 2013) of LIBSVM can be obtained by downloading the zip file or tar.gz file from <a href="http://www.csie.ntu.edu.tw/%7Ecjlin/libsvm/">http://www.csie.ntu.edu.tw/~cjlin/libsvm/</a>.</li>
+<li>Copy "grid_WCC081812.py" into libsvm-3.17/tools  directory. </li>
+<li>You also need to have R installed and four R packages installed. The four R packages are:library(grid), library(gridBase), library(ggplot2), library(seqinr).</li>
+</ol>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<ol>
+<li>Your strand-specific RNA-seq data need to be mapped to the corresponding genome. In our study, we use Clostridium Thermocellum genome as a reference genome for mapping. </li>
+<li>The mapped results need to be re-formatted to two-column single-base signals. Please see a sample file named "ssRNAseq.forward.reversed.signals". The first line of the file presents the first position of the genome, and the two numbers separated by TAB are RNA-seq signals of forward strand and reversed strand, respectively.</li>
+<li>With the "ssRNAseq.forward.reversed.signals" ready, you also need prepare a GFF file and a FASTA file of the corresponding genome for running an R script named "seqTU_101413.r". In our study, we used NC_009012.gff  and NC_009012.fna as the GFF file and the FASTA file.</li>
+<li>The TU identification will be performed by running "seqTU_101413.r". The results then can be post-processed by another R script named "print.final.table_101413.r".</li>
+</ol>
+
+<h2>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contact.</h2>
+
+<p>If you have any questions, please contact us:</p>
+
+<ol>
+<li>Wen-Chi Chou: <a href="mailto:wcc957@gmail.com">wcc957@gmail.com</a> </li>
+<li>Qin Ma: <a href="mailto:maqin2001@gmail.com">maqin2001@gmail.com</a> </li>
+</ol>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">SeqTU maintained by <a href="https://github.com/maqin2001">maqin2001</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-60763851-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
