@@ -1,7 +1,19 @@
 ## Introduction ##
 Identification of transcription units (TUs) encoded in a bacterial genome is essential to the elucidation of how a transcriptome is organized. Compared to the statically defined operons, TUs are defined dynamically as co-transcribed genes under different conditions. Here we use strand-specific RNA-seq (ssRNA-seq) data to derive the organization of the TUs in Clostridium thermocellum, using a machine-learning approach. Based on two parameters measuring the RNA-seq expression patterns across the genome: expression-level continuity and variance, our algorithm can accurately identify the boundaries of individual TUs. For each predicted TU, we have assessed its quality using: (i) enrichment of cis-regulatory motifs in the immediate upstream region of the TU; (ii) occurrence of transcription terminators in the immediate downstream region of the TU; and (iii) expression levels of the intergenic regions. A total of 2,619 distinct TUs are identified based on four ssRNA-seq datasets with strong assessment results. In all identified TUs, 42% have multiple genes, and the TUs on the leading strand have more genes than those on the lagging strand. In comparison of the identified TUs with predicted operons, the consistency decreases when a consecutive gene pair has the length of intergenic regions between 50 and 200 bps while the rest of gene pairs have higher consistency.
+
 ## Installation ##
 1. Download and install libSVM: The current release (Version 3.17, April 2013) of LIBSVM can be obtained by downloading the zip file or tar.gz file from http://www.csie.ntu.edu.tw/~cjlin/libsvm/.
 2. Copy "grid_WCC081812.py" into libsvm-3.17/tools directory.
 3. You also need to have R installed and four R packages installed. The four R packages are:library(grid), library(gridBase), library(ggplot2), library(seqinr).
-Usage
+
+## Usage ##
+1. Your strand-specific RNA-seq data need to be mapped to the corresponding genome. In our study, we use Clostridium Thermocellum genome as a reference genome for mapping.
+2. The mapped results need to be re-formatted to two-column single-base signals. Please see a sample file named "ssRNAseq.forward.reversed.signals". The first line of the file presents the first position of the genome, and the two numbers separated by TAB are RNA-seq signals of forward strand and reversed strand, respectively.
+3. With the "ssRNAseq.forward.reversed.signals" ready, you also need prepare a GFF file and a FASTA file of the corresponding genome for running an R script named "seqTU_101413.r". In our study, we used NC_009012.gff and NC_009012.fna as the GFF file and the FASTA file.
+4. The TU identification will be performed by running "seqTU_101413.r". The results then can be post-processed by another R script named "print.final.table_101413.r".
+
+## Contact ##
+If you have any questions, please contact us:
+
+1. Wen-Chi Chou: wcc957@gmail.com
+2. Qin Ma: qin.ma@sdstate.edu
